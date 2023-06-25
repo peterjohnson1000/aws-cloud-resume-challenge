@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="">
+        <div class="flex justify-center items-center flex-col">
+            <div class="counter text-center pt-5 pb-5">
+                <p class="counter-number">Fetching data....</p>
+            </div>
+            <div>
+                <img src="../assets/PeterJohnson Photo.JPG" class="rounded-full h-52 pb-5">
+            </div>
+            <div>
+                <p class="text-3xl">Peter Johnson 👋</p>
+            </div>
+            <div class="flex w-[200px] justify-between py-5">
+                <a href="https://github.com/peterjohnson1000" target="_blank"><img src="../assets/github.svg"
+                        class="h-8"></a>
+                <a href="https://twitter.com/peterjohnson131" target="_blank"><img src="../assets/twitter.svg"
+                        class="h-8"></a>
+                <a href="https://www.linkedin.com/in/peterjohns0n/" target="_blank"><img src="../assets/linkedin.svg"
+                        class="h-8"></a>
+                <a href="https://www.youtube.com/peterin" target="_blank"><img src="../assets/youtube.svg"
+                        class="h-8"></a>
+            </div>
+            <div>
+                <p class="font-extralight italic pt-5">Dream ~ Believe ~ Achieve</p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center pt-64">
+            <p class="font-light">built with ♥ peter</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    const counter = document.querySelector(".counter-number");
+    async function updateCounter() {
+        let response = await fetch('https://4gtbpyqpidrkjsb6b3tr34r2om0uqimt.lambda-url.ap-south-1.on.aws/');
+        let data = response.json();
+        data.then(result => {
+            // console.log(result);
+            counter.innerHTML = `This Page has been Viewed ${result} times.`;
+        });
+    }
+
+    updateCounter();
+</script>
+
+</html>
