@@ -42,10 +42,9 @@
 </body>
 
 <script>
-    const apiKey = process.env.AWS_RESUME_CHALLENGE_FUNCTIONAL_URL;
     const counter = document.querySelector(".counter-number");
     async function updateCounter() {
-        let response = await fetch(apiKey);
+        let response = await fetch('https://4gtbpyqpidrkjsb6b3tr34r2om0uqimt.lambda-url.ap-south-1.on.aws/');
         let data = response.json();
         data.then(result => {
             // console.log(result);
