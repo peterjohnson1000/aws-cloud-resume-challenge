@@ -44,7 +44,7 @@
 <script>
     const counter = document.querySelector(".counter-number");
     async function updateCounter() {
-        const apiKey = "${{ AWS_RESUME_CHALLENGE_FUNCTIONAL_URL }}";
+        const apiKey = "${{ secrets.AWS_RESUME_CHALLENGE_FUNCTIONAL_URL }}";
         let response = await fetch(apiKey);
         let data = response.json();
         data.then(result => {
