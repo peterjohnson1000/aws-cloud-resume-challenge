@@ -47,7 +47,7 @@
         let response = await fetch('https://4gtbpyqpidrkjsb6b3tr34r2om0uqimt.lambda-url.ap-south-1.on.aws/');
         let data = response.json();
         data.then(result => {
-            // console.log(result);
+            console.log(result);
             counter.innerHTML = `This Page has been Viewed ${result} times.`;
         });
     }
